@@ -5,6 +5,7 @@
     border-radius: 2px;
     padding: 20px;
     >.todo {
+        width: 100%;
         border-bottom: 1px solid rgba(0, 0, 0, 0.15);
         padding: 5px;
         display: flex;
@@ -15,7 +16,7 @@
         }
         >div {
             width: 80px;
-            height: 26px;
+            height: 20px;
             font-size: 12px;
             cursor: pointer;
             user-select: none;
@@ -27,6 +28,20 @@
             margin-left: 10px;
             &:hover {
                 background: rgba(0, 0, 0, 0.05);
+            }
+        }
+        &.nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            >div {
+                width: 33%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:first-child{
+                   margin-left: 0;
+                }
             }
         }
     }

@@ -1,8 +1,32 @@
 import React from 'react'
 import '../style/TodoList.scss'
-const TodoList = ({ todos, toggleTodo, deleteTodo }) => {
+const TodoList = ({ todos, filter, toggleTodo, deleteTodo, setFilter }) => {
   return (
     <ul className="list">
+      <li className="todo nav">
+        <div
+          onClick={() => setFilter('all')}
+          style={{ background: filter === 'all' ? 'rgba(0, 0, 0, 0.1)' : '' }}
+        >
+          全部
+        </div>
+        <div
+          onClick={() => setFilter('unfinished')}
+          style={{
+            background: filter === 'unfinished' ? 'rgba(0, 0, 0, 0.1)' : ''
+          }}
+        >
+          未完成
+        </div>
+        <div
+          onClick={() => setFilter('finished')}
+          style={{
+            background: filter === 'finished' ? 'rgba(0, 0, 0, 0.1)' : ''
+          }}
+        >
+          已完成
+        </div>
+      </li>
       {todos.length ? (
         todos.map(todo => (
           <li className="todo" key={todo.id}>

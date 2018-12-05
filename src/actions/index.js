@@ -22,3 +22,8 @@ export const deleteTodo = id => ({
     type: 'delete',
     id
 })
+
+export const setFilter=filter=>({
+    type:'setFilter',
+    filter
+})
